@@ -1,4 +1,4 @@
-package com.vitria.test.rs.ws;
+package com.greenbee.se.console.rest;
 
 //import javax.ws.rs.ApplicationPath;
 
@@ -10,7 +10,7 @@ public class Application extends ResourceConfig {
 
     public Application() {
         registerClasses(JacksonFeature.class);
-        packages("com.vitria.test.rs.ws");
+        packages("com.greenbee.se.console.ws");
     }
 
 }

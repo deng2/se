@@ -1,4 +1,4 @@
-package com.vitria.test.rs.ws;
+package com.greenbee.se.console.rest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

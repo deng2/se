@@ -1,4 +1,4 @@
-package com.vitria.test.rs.ws;
+package com.greenbee.se.console.rest;
 
 public class JavaBean {
 

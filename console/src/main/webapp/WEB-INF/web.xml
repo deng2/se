@@ -3,48 +3,35 @@
         xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
         metadata-complete="false" version="3.1">
-    <display-name>Tapestry 5 Application</display-name>
     <context-param>
-        <param-name>tapestry.app-package</param-name>
-        <param-value>com.vitria.test.tapestry</param-value>
+        <param-name>shiroConfigLocations</param-name>
+        <param-value>classpath:shiro.ini</param-value>
     </context-param>
+    <listener>
+        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+    </listener>
     <filter>
-        <filter-name>rest</filter-name>
+        <filter-name>shiro</filter-name>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>jersey</filter-name>
         <filter-class>org.glassfish.jersey.servlet.ServletContainer</filter-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
-            <param-value>com.vitria.test.rs.ws.Application</param-value>
+            <param-value>com.greenbee.se.console.rest.Application</param-value>
         </init-param>
     </filter>
-    <filter>
-        <filter-name>app</filter-name>
-        <filter-class>org.apache.tapestry5.TapestryFilter</filter-class>
-    </filter>
     <filter-mapping>
-        <filter-name>rest</filter-name>
-        <url-pattern>/rest/*</url-pattern>
+        <filter-name>shiro</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
     </filter-mapping>
     <filter-mapping>
-        <filter-name>app</filter-name>
+        <filter-name>jersey</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>default</web-resource-name>
-            <url-pattern>/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>*</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <login-config>
-        <auth-method>BASIC</auth-method>
-        <realm-name>Agent Realm</realm-name>
-    </login-config>
-    <security-role>
-        <role-name>admin</role-name>
-    </security-role>
-    <security-role>
-        <role-name>user</role-name>
-    </security-role>
 </web-app>
