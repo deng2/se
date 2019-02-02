@@ -198,6 +198,13 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- commons -->
+            <dependency>
+                <groupId>com.greenbee.commons</groupId>
+                <artifactId>commons-basic</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+
             <!--local modules-->
             <dependency>
                 <groupId>com.greenbee.se</groupId>

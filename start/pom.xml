@@ -11,5 +11,11 @@
 
     <artifactId>se-start</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.greenbee.commons</groupId>
+            <artifactId>commons-basic</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

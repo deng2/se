@@ -31,4 +31,4 @@ shift $((OPTIND - 1))
 
 
 export SE_HOME=$h
-java -cp "$h/bin/*${cs}$h/etc${cs}$h/lib/*" $JAVA_OPTS com.greenbee.se.start.JettyMain "$@"
+java -cp "${h}/etc${cs}${h}/lib/*" $JAVA_OPTS com.greenbee.se.start.JettyMain "$@"

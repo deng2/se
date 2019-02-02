@@ -14,15 +14,6 @@
     <dependencySets>
         <dependencySet>
             <includes>
-                <include>com.greenbee.se:se-start</include>
-            </includes>
-            <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>bin</outputDirectory>
-            <unpack>false</unpack>
-            <useTransitiveDependencies>false</useTransitiveDependencies>
-        </dependencySet>
-        <dependencySet>
-            <includes>
                 <include>com.greenbee.se:se-console</include>
             </includes>
             <useProjectArtifact>false</useProjectArtifact>
@@ -34,9 +25,6 @@
             <includes>
                 <include>*:*:jar</include>
             </includes>
-            <excludes>
-                <exclude>com.greenbee.se:se-start</exclude>
-            </excludes>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>lib</outputDirectory>
             <unpack>false</unpack>
