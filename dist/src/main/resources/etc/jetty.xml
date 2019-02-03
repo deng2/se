@@ -102,22 +102,6 @@
     <Set name="dumpBeforeStop"><Property name="jetty.dump.stop" default="false"/></Set>
 
     <!-- =========================================================== -->
-    <!-- Configure Authentication Login Service                      -->
-    <!-- Realms may be configured for the entire server here, or     -->
-    <!-- they can be configured for a specific web app in a context  -->
-    <!-- configuration (see $(jetty.home)/contexts/test.xml for an   -->
-    <!-- example).                                                   -->
-    <!-- =========================================================== -->
-    <Call name="addBean">
-      <Arg>
-        <New class="org.eclipse.jetty.security.HashLoginService">
-          <Set name="name">Agent Realm</Set>
-          <Set name="config"><Property name="jetty.home" default="."/>/etc/realm.properties</Set>
-          <Set name="refreshInterval">0</Set>
-        </New>
-      </Arg>
-    </Call>    
-    <!-- =========================================================== -->
     <!-- Set handler Collection Structure                            -->
     <!-- =========================================================== -->
     <Set name="handler">
@@ -180,5 +164,5 @@
           </Array>
         </Arg>
       </Call>
-    </Call>    
+    </Call>
 </Configure>
