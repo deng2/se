@@ -5,7 +5,7 @@
         metadata-complete="false" version="3.1">
     <context-param>
         <param-name>shiroConfigLocations</param-name>
-        <param-value>classpath:shiro.ini</param-value>
+        <param-value>WEB-INF/shiro.ini</param-value>
     </context-param>
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
@@ -32,6 +32,6 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>jersey</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/rest/*</url-pattern>
     </filter-mapping>
 </web-app>
