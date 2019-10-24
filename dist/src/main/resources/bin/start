@@ -18,12 +18,15 @@ if [[ "`uname`" = CYGWIN* ]]; then
 fi
 
 #add debug option support
-while getopts dh opt; do
+while getopts :dh opt; do
     case "$opt" in
         h)  help
             exit
             ;;
         d)  JAVA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=7878,server=y,suspend=y"
+            ;;
+        *)  ((OPTIND--))
+            break
             ;;
     esac
 done
