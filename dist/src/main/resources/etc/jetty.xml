@@ -132,15 +132,13 @@
     <!-- =========================================================== -->
     <Set name="handler">
         <New class="org.eclipse.jetty.webapp.WebAppContext">
-            <Set name="war"><SystemProperty name="jetty.home" default="."/>/deploy/console
-            </Set>
+            <Set name="war"><SystemProperty name="jetty.home" default="."/>/deploy/console</Set>
             <!--
             <Set name="copyWebDir">false</Set>
             -->
             <Set name="contextPath">/</Set>
             <Set name="extractWAR">true</Set>
-            <Set name="defaultsDescriptor"><SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml
-            </Set>
+            <Set name="defaultsDescriptor"><SystemProperty name="jetty.home" default="."/>/etc/webdefault.xml</Set>
         </New>
     </Set>
 
